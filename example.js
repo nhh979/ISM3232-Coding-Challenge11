@@ -13,4 +13,15 @@ function main() {
     var xScale = d3.scaleLinear()
                         .domain([d3.min(dataArray), d3.max(dataArray)])
                         .range([0, svgHeight])
+
+    // Create groups
+    var group = svg.selectAll('g')
+                        .data(dataArray)
+                        .enter().append('g')
+                        .attr('transform', function(d,i) {return `translate(0, ${i * barHeight})`})
+    // Create a bar for each group
+    group.append('rect')
+            .attr('width', function(d) {return xScale(d)})
+            .attr('height', barHeight - margin)
+    
 }
