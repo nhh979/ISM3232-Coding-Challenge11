@@ -23,5 +23,10 @@ function main() {
     group.append('rect')
             .attr('width', function(d) {return xScale(d)})
             .attr('height', barHeight - margin)
-    
+    // Create text for each group
+    group.append('text')
+            .attr('x', function(d) {return xScale(d)})
+            .attr('y', barHeight / 2)
+            .attr('dy', '0.35em')
+            .text(function(d) {return d})
 }
