@@ -18,15 +18,26 @@ function main() {
     var group = svg.selectAll('g')
                         .data(dataArray)
                         .enter().append('g')
-                        .attr('transform', function(d,i) {return `translate(0, ${i * barHeight})`})
+                        .attr('transform', function(d,i) {return `translate(0, ${i *(barHeight + margin)})`})                     
     // Create a bar for each group
     group.append('rect')
-            .attr('width', function(d) {return xScale(d)})
+            .attr('width', 0)         
             .attr('height', barHeight - margin)
+            .attr('fill', 'firebrick')
+                //Create event listeners
+            .on('mouseover', function() {
+                d3.select(this).attr('fill','yellowgreen')})
+            .on('mouseout', function() {
+                d3.select(this).attr('fill','firebrick')})
+                // Add transition effect
+            .transition().duration(1000)
+            .attr('width', function(d) {return xScale(d)})
+          
     // Create text for each group
     group.append('text')
             .attr('x', function(d) {return xScale(d)})
             .attr('y', barHeight / 2)
             .attr('dy', '0.35em')
             .text(function(d) {return d})
+
 }
