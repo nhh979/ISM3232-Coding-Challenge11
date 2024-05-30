@@ -9,4 +9,8 @@ function main() {
     // Define the SVG's dimensions   
     var svg = d3.select('svg').attr('width', svgWidth).attr('height', svgHeight)
 
+    // Create a linear scale for x-axis
+    var xScale = d3.scaleLinear()
+                        .domain([d3.min(dataArray), d3.max(dataArray)])
+                        .range([0, svgHeight])
 }
