@@ -1,0 +1,3 @@
+# Coding Challenge 11
+
+In this project, our primary objective is to construct a dynamic bar chart utilizing the `D3.js` library. We learn about SVG containers which are used to display graphics on webpages, by initializing an SVG with specified dimensions and implementing a **linear scale** for the x-axis to map the data's values. Besides, we utilize `<g>` elements to create bars and text labels. We also apply transition effects to animate the bars' movement from left to right and implement hover effects to highlight bars when the mouse hovers over them.
