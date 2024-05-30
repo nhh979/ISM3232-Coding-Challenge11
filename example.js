@@ -12,7 +12,7 @@ function main() {
     // Create a linear scale for x-axis
     var xScale = d3.scaleLinear()
                         .domain([d3.min(dataArray), d3.max(dataArray)])
-                        .range([0, svgHeight])
+                        .range([50, svgWidth])
 
     // Create groups
     var group = svg.selectAll('g')
